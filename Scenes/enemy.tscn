@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dxxnqh074sovv"]
+
+[ext_resource type="Texture2D" uid="uid://cs18jryakw1oi" path="res://Assets/pixil-frame-0 (12).png" id="1_1f0kj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287tu"]
+atlas = ExtResource("1_1f0kj")
+region = Rect2(0, 24, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
+atlas = ExtResource("1_1f0kj")
+region = Rect2(12, 24, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghaa6"]
+atlas = ExtResource("1_1f0kj")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dp5w"]
+atlas = ExtResource("1_1f0kj")
+region = Rect2(12, 12, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_auwsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287tu")
+}],
+"loop": true,
+"name": &"damage_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0830c")
+}],
+"loop": true,
+"name": &"damage_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghaa6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dp5w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D" unique_id=1081108376]
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=414649632]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_auwsv")
+animation = &"damage_idle"
+autoplay = "idle"

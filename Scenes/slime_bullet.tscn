@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dnnmgv32phtv8"]
+
+[ext_resource type="Texture2D" uid="uid://cap1vgwnusl7r" path="res://Assets/pixil-frame-0 (16).png" id="1_a6y5e"]
+[ext_resource type="Script" uid="uid://bv24e0ns0c0ni" path="res://Scripts/slime_bullet.gd" id="1_j4gss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4gss"]
+atlas = ExtResource("1_a6y5e")
+region = Rect2(13, 0, 13, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve5im"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4gss")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="SlimeBullet" type="Node2D" unique_id=2001577605]
+script = ExtResource("1_j4gss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1620646207]
+sprite_frames = SubResource("SpriteFrames_ve5im")
+animation = &"fly"

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c40kntq6u57k8"]
+
+[ext_resource type="Texture2D" uid="uid://cap1vgwnusl7r" path="res://Assets/pixil-frame-0 (16).png" id="1_4pp0e"]
+[ext_resource type="Script" uid="uid://bb2lnh467a6h2" path="res://Scripts/slime_pal.gd" id="1_tnu5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnu5c"]
+atlas = ExtResource("1_4pp0e")
+region = Rect2(26, 0, 13, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7lbx"]
+atlas = ExtResource("1_4pp0e")
+region = Rect2(39, 0, 13, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr7yg"]
+atlas = ExtResource("1_4pp0e")
+region = Rect2(13, 0, 13, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_key3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnu5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7lbx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr7yg")
+}],
+"loop": true,
+"name": &"Throw",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l174p"]
+radius = 5.0990195
+
+[node name="SlimePal" type="Area2D" unique_id=596115258 groups=["SlimePal", "keys"]]
+script = ExtResource("1_tnu5c")
+
+[node name="Slimey" type="AnimatedSprite2D" parent="." unique_id=2065971519]
+sprite_frames = SubResource("SpriteFrames_key3j")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.38844076
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196064039]
+shape = SubResource("CircleShape2D_l174p")

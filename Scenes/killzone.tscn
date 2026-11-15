@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cwq260rr0we1g"]
+
+[ext_resource type="Script" uid="uid://4thaare1u3uf" path="res://Scripts/killzone.gd" id="1_jvagm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
+
+[node name="Killzone" type="Area2D" unique_id=1461180675]
+script = ExtResource("1_jvagm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1654995372]
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1596703452]
+shape = SubResource("RectangleShape2D_jvagm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
